@@ -32,7 +32,21 @@
                     <a href="#urunler" data-en="Products" class="hover:text-blue-600 transition">Ürünler</a>
                     <a href="#iletisim" data-en="Contact" class="hover:text-blue-600 transition">İletişim</a>
 
-                    <!-- Dil Değiştir Butonu -->
+                    <!-- DİL SEÇİCİ DROPDOWN -->
+                    <div class="relative inline-block text-left">
+                         <button class="langMenuButton text-3xl">
+                              <i class="fa-solid fa-globe"></i>
+                         </button>
+
+                         <div
+                              class="langMenu hidden absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                              <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-lang="tr">🇹🇷
+                                   Türkçe</button>
+                              <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-lang="en">🇬🇧
+                                   English</button>
+                         </div>
+                    </div>
+
 
                </div>
 
@@ -40,11 +54,23 @@
 
                <!--MOBILE MENU BUTTON-->
                <div class="fixed right-8 top-3 md:hidden flex items-center space-x-10 p-2 rounded z-50">
-                    <!-- Dil Değiştir Butonu -->
-                    <button id="langToggle"
-                         class="px-5 py-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold rounded-lg shadow-md hover:from-blue-700 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">
-                         EN
-                    </button>
+
+
+                    <!-- DİL SEÇİCİ DROPDOWN -->
+                    <div class="relative inline-block text-left">
+                         <button class="langMenuButton text-3xl">
+                              <i class="fa-solid fa-globe"></i>
+                         </button>
+
+                         <div
+                              class="langMenu hidden absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                              <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-lang="tr">🇹🇷
+                                   Türkçe</button>
+                              <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-lang="en">🇬🇧
+                                   English</button>
+                         </div>
+                    </div>
+
 
                     <!-- Hamburger Menü Butonu -->
                     <button class="mobileMenu text-3xl p-2">
@@ -297,98 +323,105 @@
 
 
      <!-- URUNLER -->
-     <section id="urunler" class="bg-gray-100 py-16 relative overflow-hidden" data-aos="fade-right">
-          <div class="max-w-2xl mx-auto px-4">
-               <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10" data-aos="fade-right"
-                    data-en="Products">
-                    Ürünler</h2>
+     <section id="urunler" class="py-16 relative overflow-hidden">
+          <div class="max-w-6xl mx-auto px-4">
+               <h2 class="text-4xl lg:text-5xl font-bold text-center mb-12" data-en="Products">Ürünler</h2>
 
-               <!-- Dış Kapsayıcı -->
                <div class="relative">
 
-                    <!-- Sol Ok -->
+                    <!-- Modern Oklar -->
                     <button id="prevBtn"
-                         class="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-4xl md:text-5xl text-gray-700 hover:text-black">
-                         <i class="fa-solid fa-circle-arrow-left"></i>
+                         class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/60 backdrop-blur-sm text-gray-800 hover:text-white hover:bg-blue-600 rounded-full shadow-lg transition-all duration-300">
+                         <i class="fa-solid fa-chevron-left text-xl"></i>
                     </button>
 
-                    <!-- Sağ Ok -->
                     <button id="nextBtn"
-                         class="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-4xl md:text-5xl text-gray-700 hover:text-black">
-                         <i class="fa-solid fa-circle-arrow-right"></i>
+                         class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/60 backdrop-blur-sm text-gray-800 hover:text-white hover:bg-blue-600 rounded-full shadow-lg transition-all duration-300">
+                         <i class="fa-solid fa-chevron-right text-xl"></i>
                     </button>
 
-                    <!-- Kaydırılabilir Alan -->
+                    <!-- Kaydırılabilir Kart Alanı -->
                     <div class="overflow-hidden">
-                         <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+                         <div id="slider"
+                              class="flex gap-6 transition-transform duration-500 ease-in-out scroll-smooth snap-x snap-mandatory px-1 scrollbar-hide">
 
-                              <!-- Ürün 1 -->
+                              <!-- Kart 1 -->
                               <div
-                                   class="w-full shrink-0 relative h-[480px] lg:h-[520px] rounded-xl overflow-hidden shadow-lg">
-                                   <img src="medikal-asset/device.png" alt="Ürün" class="w-full h-full object-cover" />
-                                   <div class="absolute inset-0 flex justify-center items-start">
-                                        <div class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md text-center max-w-[85%] mt-6"
-                                             data-aos="fade-right">
-                                             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2"
-                                                  data-en="Visualization System">Görüntüleme Sistemi</h3>
-                                             <p class="text-sm md:text-base text-gray-700"
+                                   class="w-full shrink-0 max-w-sm snap-start bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex flex-col min-h-[550px]">
+                                   <img src="medikal-asset/device2.png" alt="Ürün" class="w-full h-80 object-cover">
+
+                                   <div class="flex flex-col justify-between flex-1 p-6 text-center">
+                                        <div class="space-y-4">
+                                             <h3 class="text-xl font-bold text-gray-900" data-en="Visualization System">
+                                                  Görüntüleme Sistemi</h3>
+                                             <p class="text-gray-600 text-sm"
                                                   data-en="An advanced optical system providing clear and uninterrupted imaging.">
-                                                  Net ve kesintisiz görüntü sağlayan ileri düzey optik sistem.</p>
+                                                  Net ve kesintisiz görüntü sağlayan ileri düzey optik sistem.
+                                             </p>
                                         </div>
+
+                                        <a href="#"
+                                             class="inline-block mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                                             data-en="Learn More">
+                                             Daha Fazla Bilgi Al
+                                        </a>
                                    </div>
                               </div>
 
-                              <!-- Ürün 2 -->
-                              <div class="w-full shrink-0 relative h-[480px] rounded-xl overflow-hidden shadow-lg">
-                                   <img src="medikal-asset/device9.png" alt="Ürün" class="w-full h-full object-cover" />
-                                   <div class="absolute inset-0 flex justify-center items-start">
-                                        <div
-                                             class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md text-center max-w-[85%] mt-6">
-                                             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2"
-                                                  data-en="Robotic Technology">Robotik Teknoloji</h3>
-                                             <p class="text-sm md:text-base text-gray-700 "
-                                                  data-en="Navigation and Precision Procedures">Yönlendirme ve Hassas
-                                                  işlemler</p>
-                                        </div>
-                                   </div>
-                              </div>
+                              <!-- Kart 2 -->
+                              <div
+                                   class="w-full shrink-0 max-w-sm snap-start bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex flex-col min-h-[550px]">
+                                   <img src="medikal-asset/device2.png" alt="Ürün" class="w-full h-80 object-cover">
 
-                              <!-- Ürün 3 -->
-                              <div class="w-full shrink-0 relative h-[480px] rounded-xl overflow-hidden shadow-lg">
-                                   <img src="medikal-asset/device2.png" alt="Ürün" class="w-full h-full object-cover" />
-                                   <div class="absolute inset-0 flex justify-center items-start">
-                                        <div
-                                             class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md text-center max-w-[85%] mt-6">
-                                             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2"
-                                                  data-en="Precision Device">Hassas Cihaz</h3>
-                                             <p class="text-sm md:text-base text-gray-700 "
-                                                  data-en="High-resolution diagnostic system">Yüksek çözünürlüklü teşhis
-                                                  sistemi.</p>
+                                   <div class="flex flex-col justify-between flex-1 p-6 text-center">
+                                        <div class="space-y-4">
+                                             <h3 class="text-xl font-bold text-gray-900" data-en="Visualization System">
+                                                  Görüntüleme Sistemi</h3>
+                                             <p class="text-gray-600 text-sm"
+                                                  data-en="An advanced optical system providing clear and uninterrupted imaging.">
+                                                  Net ve kesintisiz görüntü sağlayan ileri düzey optik sistem.
+                                             </p>
                                         </div>
+
+                                        <a href="#"
+                                             class="inline-block mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                                             data-en="Learn More">
+                                             Daha Fazla Bilgi Al
+                                        </a>
                                    </div>
                               </div>
 
 
-                              <!-- Ürün 4 -->
-                              <div class="w-full shrink-0 relative h-[480px] rounded-xl overflow-hidden shadow-lg">
-                                   <img src="medikal-asset/device7.png" alt="Ürün" class="w-full h-full object-cover" />
-                                   <div class="absolute inset-0 flex justify-center items-start">
-                                        <div
-                                             class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md text-center max-w-[85%] mt-6">
-                                             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2"
-                                                  data-en="Portable Ultrasound Device">Taşınabilir Ultrason Cihazi</h3>
-                                             <p class="text-sm md:text-base text-gray-700"
-                                                  data-en="Always accessible and life-saving technologies.">Her zaman
-                                                  ulaşılabilir ve hayat kurtaran teknolojiler.</p>
+                              <!-- Kart 3 -->
+                              <div
+                                   class="w-full shrink-0 max-w-sm snap-start bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex flex-col min-h-[550px]">
+                                   <img src="medikal-asset/device2.png" alt="Ürün" class="w-full h-80 object-cover">
+
+                                   <div class="flex flex-col justify-between flex-1 p-6 text-center">
+                                        <div class="space-y-4">
+                                             <h3 class="text-xl font-bold text-gray-900" data-en="Visualization System">
+                                                  Görüntüleme Sistemi</h3>
+                                             <p class="text-gray-600 text-sm"
+                                                  data-en="An advanced optical system providing clear and uninterrupted imaging.">
+                                                  Net ve kesintisiz görüntü sağlayan ileri düzey optik sistem.
+                                             </p>
                                         </div>
+
+                                        <a href="#"
+                                             class="inline-block mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                                             data-en="Learn More">
+                                             Daha Fazla Bilgi Al
+                                        </a>
                                    </div>
                               </div>
+
 
                          </div>
                     </div>
                </div>
           </div>
      </section>
+
 
 
 
@@ -400,7 +433,7 @@
                <div class="relative w-full lg:w-[50rem] pb-[56.25%] lg:pb-0 lg:h-[30rem] overflow-hidden rounded-2xl shadow-lg"
                     data-aos="fade-right">
                     <iframe
-                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1123.4244094885312!2d38.80297121470134!3d37.21153218744235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15347bb68e52be29%3A0xd47ec8c14c64acf9!2sParma%20Tasar%C4%B1m!5e0!3m2!1str!2str!4v1753471115496!5m2!1str!2str"
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7557.460409577561!2d38.80490736362593!3d37.21161266145651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15347bb68e52be29%3A0xd47ec8c14c64acf9!2sParma%20Tasar%C4%B1m!5e0!3m2!1str!2str!4v1753474223279!5m2!1str!2str"
                          class="absolute inset-0 w-full h-full border-0" allowfullscreen="" loading="lazy"
                          referrerpolicy="no-referrer-when-downgrade"></iframe>
                </div>
@@ -540,7 +573,7 @@
                </div>
           </footer>
 
-  
+
 
      </section>
 
