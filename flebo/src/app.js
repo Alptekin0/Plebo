@@ -45,6 +45,19 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollIndicator.classList.toggle("hidden");
   }, 5000);
 
+
+
+  // Sayfa yüklendiğinde orijinal metinleri ve placeholderları sakla
+  const elements = document.querySelectorAll("[data-en]");
+  for (let i = 0; i < elements.length; i++) {
+    const el = elements[i];
+    if (el.placeholder !== undefined) {
+      el.dataset.originalPlaceholder = el.placeholder;
+    } else {
+      el.dataset.originalText = el.textContent;
+    }
+  }
+
 });
 
 
@@ -99,3 +112,38 @@ prevBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', updateSlider);
+
+
+let currentLang = "tr";
+
+document.getElementById("langToggle").addEventListener("click", () => {
+  const btn = document.getElementById("langToggle");
+
+  if (currentLang === "tr") {
+    currentLang = "en";
+    btn.textContent = "TR";
+  } else {
+    currentLang = "tr";
+    btn.textContent = "EN";
+  }
+
+  const elements = document.querySelectorAll("[data-en]");
+  for (let i = 0; i < elements.length; i++) {
+    const el = elements[i];
+    if (el.placeholder !== undefined) {
+      // Eğer elementin placeholder attribute'u varsa, onu güncelle
+      if (currentLang === "en") {
+        el.placeholder = el.getAttribute("data-en");
+      } else {
+        el.placeholder = el.dataset.originalPlaceholder;
+      }
+    } else {
+      // Yoksa normal textContent güncelle
+      if (currentLang === "en") {
+        el.textContent = el.getAttribute("data-en");
+      } else {
+        el.textContent = el.dataset.originalText;
+      }
+    }
+  }
+});
