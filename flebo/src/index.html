@@ -16,32 +16,47 @@
 
      <!--  HEADER  -->
      <header id="header"
-          class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow transition-transform duration-700">
-          <nav class="flex items-center justify-between px-8 h-20 w-full">
+          class="fixed top-0 left-0 w-full z-50 bg-white backdrop-blur-md  transition-transform duration-700">
+          <nav class="flex items-center justify-between px-8 h-20 md:h-24 w-full">
                <a href="#ana-sayfa">
                     <img src="medikal-asset/logo.jpeg" alt="BioDs Logo"
-                         class="h-18 md:h-20 w-18 md:w-20 rounded-full shadow-lg border-4 border-white mx-auto object-cover" />
+                         class="h-18 md:h-20 lg:h-[90px] w-18 md:w-20 lg:w-[90px] rounded-full border-4 border-white mx-auto object-cover" />
                </a>
 
 
 
                <!--DESKTOP MENU-->
-               <div class="hidden md:flex gap-8">
-                    <a href="#ana-sayfa">Ana Sayfa</a>
-                    <a href="#hakkimizda">Hakkımızda</a>
-                    <a href="#urunler">Ürünler</a>
-                    <a href="#iletisim">İletişim</a>
+               <div class="hidden md:flex items-center justify-center mr-28 gap-8 text-xl font-semibold">
+                    <a href="#ana-sayfa" data-en="Home" class="hover:text-blue-600 transition">Ana Sayfa</a>
+                    <a href="#hakkimizda" data-en="About" class="hover:text-blue-600 transition">Hakkımızda</a>
+                    <a href="#urunler" data-en="Products" class="hover:text-blue-600 transition">Ürünler</a>
+                    <a href="#iletisim" data-en="Contact" class="hover:text-blue-600 transition">İletişim</a>
+
+                    <!-- Dil Değiştir Butonu -->
+
                </div>
 
+
+
                <!--MOBILE MENU BUTTON-->
-               <div class="fixed right-8 md:hidden">
-                    <button class="mobileMenu text-2xl">
+               <div class="fixed right-8 top-3 md:hidden flex items-center space-x-10 p-2 rounded z-50">
+                    <!-- Dil Değiştir Butonu -->
+                    <button id="langToggle"
+                         class="px-5 py-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold rounded-lg shadow-md hover:from-blue-700 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">
+                         EN
+                    </button>
+
+                    <!-- Hamburger Menü Butonu -->
+                    <button class="mobileMenu text-3xl p-2">
                          <i class="fa-solid fa-bars"></i>
                     </button>
                </div>
+
+
           </nav>
      </header>
 
+     <!-- MOBİL MENU İCERİK -->
      <div class="mobileMenuContent">
           <div
                class="mobileMenuPanel hidden fixed top-0 right-0 w-[45vw] h-screen bg-secondary overflow-y-auto z-[100] p-6">
@@ -53,20 +68,17 @@
                     </button>
 
                     <div class="pages flex flex-col items-center justify-center mt-11">
-                         <a href="#ana-sayfa" class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white">Ana
-                              Sayfa</a>
-                         <a href="#hakkimizda"
-                              class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white">Hakkımızda</a>
-                         <a href="#urunler"
-                              class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white">Ürünler</a>
-                         <a href="#iletisim"
-                              class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white">İletişim</a>
+                         <a href="#ana-sayfa" class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white"
+                              data-en="Home">Ana Sayfa</a>
+                         <a href="#hakkimizda" class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white"
+                              data-en="About">Hakkımızda</a>
+                         <a href="#urunler" class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white"
+                              data-en="Product">Ürünler</a>
+                         <a href="#iletisim" class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white"
+                              data-en="Contact">İletişim</a>
                     </div>
 
                </div>
-
-
-
           </div>
      </div>
 
@@ -74,54 +86,48 @@
      <!--ANA SAYFA-->
      <section id="ana-sayfa" class="relative w-full h-[40rem]">
 
-
           <div id="scrollIndicator"
-               class="hidden absolute bottom-15 left-[87%] -translate-x-1/2 w-[47px] h-[80px] border-2 border-white rounded-[25px] z-50">
+               class="hidden absolute bottom-15 left-[87%] -translate-x-1/2 w-[47px] md:w-[57px] h-[80px] md:h-[95px] border-2 border-white rounded-[25px] md:rounded-[30px] z-50">
                <span
-                    class="absolute top-[10px] left-1/2 +translate-x-1/2 w-[30px] h-[30px] bg-black rounded-full animate-scrollDown">
+                    class="absolute top-[10px] left-1/2 +translate-x-1/2 w-[30px] md:w-[40px] h-[30px] md:h-[37px] bg-black rounded-full animate-scrollDown">
                </span>
           </div>
 
 
 
           <!-- Arka plan resmi -->
-          <img src="medikal-asset/klinik.jpg" alt="Klinik Görseli"
-               class="absolute inset-0 w-full h-full object-cover z-0" />
+          <img src="medikal-asset/klinik2.jpg" alt="Klinik Görseli"
+               class="absolute inset-0 w-full h-full object-cover lg:object-center z-0" />
+
 
           <div class="absolute inset-0 bg-black/40 z-10"></div>
 
           <!-- Ana sayfa yazısı -->
           <div class="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-5 mt-10">
-               <h6 class="text-xl font-bold" data-aos="fade-left">BioDs Sağlık Hizmetleri</h6>
-               <p class="mt-4 text-l font-semibold w-2/3 mx-auto" data-aos="fade-left">20 yıllık bir tecrübe ile modern
-                    bir klinik deneyimine
-                    adım atın
+               <h6 class="text-xl md:text-2xl font-bold" data-aos="fade-left" data-en="BioDs Medical Services">BioDs
+                    Sağlık
+                    Hizmetleri </h6>
+               <p class="mt-4 text-l md:text-xl lg:text-[22px] font-semibold w-2/3 mx-auto" data-aos="fade-left"
+                    data-en="Step into a modern clinical experience with 20 years of expertise.">
+                    20 yıllık bir tecrübe ile modern bir klinik deneyimine adım atın
                </p>
+
 
                <div class="mt-6" data-aos="fade-right">
                     <a href="#hakkimizda"
-                         class="group relative inline-flex items-center px-5 py-3 bg-white text-black rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-xl hover:bg-gray-100">
+                         class="group relative inline-flex items-center px-5 py-3 lg:py-4 bg-white text-black rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-xl hover:bg-gray-100">
 
-                         <span class="mr-2 flex items-center gap-2">Hizmetlerimizi Keşfedin<i
-                                   class="fa-solid fa-arrow-right"></i></span>
+                         <span class="mr-2 flex items-center gap-2">
+                              <span class="translate-text md:text-xl" data-en="Discover Our Services">Hizmetlerimizi
+                                   Keşfedin</span>
+                              <i class="fa-solid fa-arrow-right"></i>
+                         </span>
+
                     </a>
                </div>
 
           </div>
-
-
-
-
      </section>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -130,17 +136,26 @@
      <section id="hakkimizda" class="flex flex-col">
 
 
+          <!-- GEÇİŞ DİVİ -->
+          <div
+               class="w-full h-1 bg-gradient-to-t from-gray-300 to-gray-200 flex items-center justify-center text-white font-bold">
+          </div>
+
+
 
           <div class="bg-gray-800 flex items-center justify-center">
                <div class="relative w-full">
 
-                    <img src="medikal-asset/team2.png" alt="Hakkımızda" class="w-full h-80 object-cover" />
+                    <img src="medikal-asset/team2.png" alt="Hakkımızda"
+                         class="w-full h-[50vh] md:h-[70vh] object-cover" />
+
 
                     <!-- Karartma katmanı -->
                     <div class="absolute inset-0 bg-black/40 z-10"></div>
 
                     <div class="absolute inset-0 flex flex-col justify-center text-white px-4 z-20">
-                         <p class="text-2xl md:text-3xl font-bold mb-2 text-center" data-aos="fade-right">HAKKIMIZDA</p>
+                         <p class="text-2xl md:text-3xl lg:text-5xl font-bold mb-2 text-center" data-aos="fade-right"
+                              data-en="About Us">HAKKIMIZDA</p>
                     </div>
                </div>
           </div>
@@ -153,17 +168,22 @@
                     <div>
                          <img src="medikal-asset/logo.jpeg" alt="Logo1" class="w-40 md:w-48 mb-6 mr-auto"
                               data-aos="fade-right" />
-                         <h2 class="text-2xl font-bold text-gray-800 mb-4" data-aos="fade-right">
+                         <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 lg:mb-10"
+                              data-aos="fade-right" data-en="BioDs Medical Services">
                               BioDs Sağlık Hizmetleri
                          </h2>
 
-                         <p class="text-base md:text-[15px] leading-relaxed mb-4" data-aos="fade-right">
+                         <p class="text-base md:text-[18px] lg:text-[20px] leading-relaxed mb-4" data-aos="fade-right"
+                              data-en="We are a biomedical engineering company dedicated to the DAVINCI Robotic Surgical Systems, the world's most advanced endoscopic robotic surgery systems.">
                               Dünyanın en gelişmiş endoskopik robotik cerrahi sistemleri olan
                               DAVINCI Robotik Cerrahi Sistemlerine adanmış bir Biomedikal
                               Mühendislik şirketiyiz.
                          </p>
 
-                         <p class="text-base md:text-[15px] leading-loose" data-aos="fade-right">
+                         <p class="text-base md:text-[18px] leading-loose lg:text-[20px]" data-aos="fade-right"
+                              data-en="As a clinic, we are committed to offering the advantages of minimally invasive DAVINCI surgery to more people in the fields of Urology, Gynecology, General Surgery, Thoracic Surgery, and Head & Neck Surgery.
+                              Our sales team, consisting of clinical support and device sales units, operates offices based in Istanbul, with additional offices in Ankara and İzmir. We also provide services through our own sales representatives in Adana, Antalya, and Erzurum.
+                              We manage clinical, sales, and after-sales support services with a highly trained, up-to-date, and internationally certified team equipped with the latest knowledge.">
                               Klinik olarak Üroloji, Jinekoloji, Genel Cerrahi, Göğüs Cerrahisi
                               ve Baş Boyun Cerrahisinde minimal invaziv DAVINCI cerrahisinin
                               avantajlarını daha çok insanımıza sunabilmeyi amaç edindik. Klinik
@@ -178,35 +198,42 @@
                     </div>
 
 
-                    <div class="flex flex-wrap justify-center gap-0 mt-8" data-aos="fade-right">
+                    <div class="flex flex-wrap justify-center gap-4 mt-8" data-aos="fade-right">
 
-                         <div class="w-40 h-40">
-                              <img src="medikal-asset/device9.png" alt="Doktor Robot" class="w-full object-contain" />
+                         <div class="w-[35%] md:w-40 aspect-square">
+                              <img src="medikal-asset/device6.png" alt="Doktor Robot"
+                                   class="w-full h-full object-contain" />
                          </div>
 
-
-                         <div class="w-40 h-40">
-                              <img src="medikal-asset/device3.png" alt="Robot Kollar" class="w-full  object-contain" />
+                         <div class="w-[35%] md:w-40 aspect-square">
+                              <img src="medikal-asset/device3.png" alt="Robot Kollar"
+                                   class="w-full h-full object-contain" />
                          </div>
 
-
-                         <div class="w-40 h-40">
-                              <img src="medikal-asset/device2.png" alt="Doktor Robot" class="w-full object-contain" />
+                         <div class="w-[35%] md:w-40 aspect-square">
+                              <img src="medikal-asset/device2.png" alt="Doktor Robot"
+                                   class="w-full h-full object-contain" />
                          </div>
 
-
-                         <div class="w-40 h-40">
-                              <img src="medikal-asset/device5.png" alt="Robot Kollar" class="w-full object-contain" />
+                         <div class="w-[35%] md:w-40 aspect-square">
+                              <img src="medikal-asset/device5.png" alt="Robot Kollar"
+                                   class="w-full h-full object-contain" />
                          </div>
+
                     </div>
+
+
+
+
                </div>
 
 
 
                <!-- Misyon -->
                <div class="mt-12 max-w-5xl mr-auto" data-aos="fade-right">
-                    <h2 class="text-xl md:text-2xl font-bold mb-4">Misyonumuz</h2>
-                    <p class="text-base md:text-[15px] leading-relaxed">
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4">Misyonumuz</h2>
+                    <p class="text-base md:text-[18px] lg:text-[20px] leading-relaxed"
+                         data-en="Our goal is to combine the advanced medical technologies needed by the healthcare sector with high-quality service and after-sales support, and to make them available to the people of our country within the scope of regulations, thereby enhancing both lifespan and quality of life.">
                          Sağlık sektörünün ihtiyaç duyduğu yüksek medikal teknolojileri, yüksek hizmet ve satış sonrası
                          destek kalitesiyle birleştirerek regülasyonlar kapsamında ülke insanının kullanımına sunmak ve
                          bu yolla yaşam süresi ve kalitesini artırmaktır.
@@ -215,24 +242,28 @@
 
                <!-- Vizyon -->
                <div class="mt-10 max-w-5xl mr-auto" data-aos="fade-right">
-                    <h2 class="text-xl md:text-2xl font-bold mb-4">Vizyonumuz</h2>
-                    <ul class="list-disc pl-6 space-y-2 text-base md:text-[15px] leading-relaxed">
-                         <li>
+                    <h2 class="text-xl md:text-2xl lg:text-4xl font-bold mb-4">Vizyonumuz</h2>
+                    <ul class="list-disc pl-6 space-y-2 text-base md:text-[18px] lg:text-[20px] leading-relaxed">
+                         <li
+                              data-en="To increase the awareness of minimally invasive robotic surgery at the highest standards in our country.">
                               Minimal invaziv operasyonların en yüksek standartta olan robotik
                               cerrahinin ülkemizdeki bilinirliğini artırmak.
                          </li>
-                         <li>
+                         <li
+                              data-en="To bring robotic surgery to all locations where minimally invasive operations are performed.">
                               Minimal invaziv operasyonların yapılabildiği tüm lokasyonlara
                               robotik cerrahiyi taşımak.
                          </li>
-                         <li>
+                         <li
+                              data-en="To continuously improve and provide system training each year for domestic and international healthcare professionals in order to increase its applicability.">
                               Uygulanabilirliği arttırmak amacıyla yerli ve yabancı sağlık meslek mensupları için
                               verilen sistem eğitimlerini her sene geliştirerek devam ettirmek.
                          </li>
-                         <li>
+                         <li data-en="To make the advanced technologies of the future available to all citizens.">
                               Geleceğin ileri teknolojilerini tüm vatandaşların hizmetine sunmak.
                          </li>
-                         <li>
+                         <li
+                              data-en="To be recognized as a trusted solution partner known for its expertise and ethical values on this path.">
                               Bu yolda bilgi birikimine güvenilen, etik değerleriyle anılan bir çözüm ortağı olarak
                               bilinmektir.
                          </li>
@@ -243,16 +274,20 @@
                <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 text-center gap-8 text-base font-semibold"
                     data-aos="fade-right">
                     <div>
-                         <p class="text-4xl font-extrabold text-black">6,900+</p>
-                         <p class="mt-2">robotik cerrahi sistemiyle</p>
+                         <p class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black">6,900+</p>
+                         <p class="mt-2 md:text-xl lg:text-2xl whitespace-nowrap"
+                              data-en="with the robotic surgery system">robotik
+                              cerrahi sistemiyle</p>
                     </div>
                     <div>
-                         <p class="text-4xl font-extrabold text-black">67+</p>
-                         <p class="mt-2">ülkede</p>
+                         <p class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black">67+</p>
+                         <p class="mt-2 md:text-xl lg:text-2xl whitespace-nowrap" data-en="in the country">ülkede</p>
                     </div>
                     <div>
-                         <p class="text-4xl font-extrabold text-black">10 m+</p>
-                         <p class="mt-2">ameliyat gerçekleştirildi</p>
+                         <p class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black">10 m+</p>
+                         <p class="mt-2 md:text-xl lg:text-2xl whitespace-nowrap" data-en="The surgery was performed">
+                              ameliyat
+                              gerçekleştirildi</p>
                     </div>
                </div>
           </div>
@@ -262,24 +297,24 @@
 
 
      <!-- URUNLER -->
-
-
      <section id="urunler" class="bg-gray-100 py-16 relative overflow-hidden" data-aos="fade-right">
           <div class="max-w-2xl mx-auto px-4">
-               <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-right">Ürünler</h2>
+               <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10" data-aos="fade-right"
+                    data-en="Products">
+                    Ürünler</h2>
 
                <!-- Dış Kapsayıcı -->
                <div class="relative">
 
                     <!-- Sol Ok -->
                     <button id="prevBtn"
-                         class="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-4xl text-gray-700 hover:text-black">
+                         class="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-4xl md:text-5xl text-gray-700 hover:text-black">
                          <i class="fa-solid fa-circle-arrow-left"></i>
                     </button>
 
                     <!-- Sağ Ok -->
                     <button id="nextBtn"
-                         class="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-4xl text-gray-700 hover:text-black">
+                         class="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-4xl md:text-5xl text-gray-700 hover:text-black">
                          <i class="fa-solid fa-circle-arrow-right"></i>
                     </button>
 
@@ -288,14 +323,17 @@
                          <div id="slider" class="flex transition-transform duration-500 ease-in-out">
 
                               <!-- Ürün 1 -->
-                              <div class="w-full shrink-0 relative h-[480px] rounded-xl overflow-hidden shadow-lg">
+                              <div
+                                   class="w-full shrink-0 relative h-[480px] lg:h-[520px] rounded-xl overflow-hidden shadow-lg">
                                    <img src="medikal-asset/device.png" alt="Ürün" class="w-full h-full object-cover" />
                                    <div class="absolute inset-0 flex justify-center items-start">
                                         <div class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md text-center max-w-[85%] mt-6"
                                              data-aos="fade-right">
-                                             <h3 class="text-xl font-bold text-gray-900 mb-2">Görüntüleme Sistemi</h3>
-                                             <p class="text-sm text-gray-700">Net ve kesintisiz görüntü sağlayan ileri
-                                                  düzey optik sistem.</p>
+                                             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2"
+                                                  data-en="Visualization System">Görüntüleme Sistemi</h3>
+                                             <p class="text-sm md:text-base text-gray-700"
+                                                  data-en="An advanced optical system providing clear and uninterrupted imaging.">
+                                                  Net ve kesintisiz görüntü sağlayan ileri düzey optik sistem.</p>
                                         </div>
                                    </div>
                               </div>
@@ -306,8 +344,11 @@
                                    <div class="absolute inset-0 flex justify-center items-start">
                                         <div
                                              class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md text-center max-w-[85%] mt-6">
-                                             <h3 class="text-xl font-bold text-gray-900 mb-2">Robotik Teknoloji</h3>
-                                             <p class="text-sm text-gray-700">Yönlendirme ve Hassas işlemler</p>
+                                             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2"
+                                                  data-en="Robotic Technology">Robotik Teknoloji</h3>
+                                             <p class="text-sm md:text-base text-gray-700 "
+                                                  data-en="Navigation and Precision Procedures">Yönlendirme ve Hassas
+                                                  işlemler</p>
                                         </div>
                                    </div>
                               </div>
@@ -318,8 +359,11 @@
                                    <div class="absolute inset-0 flex justify-center items-start">
                                         <div
                                              class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md text-center max-w-[85%] mt-6">
-                                             <h3 class="text-xl font-bold text-gray-900 mb-2">Hassas Cihaz</h3>
-                                             <p class="text-sm text-gray-700">Yüksek çözünürlüklü teşhis sistemi.</p>
+                                             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2"
+                                                  data-en="Precision Device">Hassas Cihaz</h3>
+                                             <p class="text-sm md:text-base text-gray-700 "
+                                                  data-en="High-resolution diagnostic system">Yüksek çözünürlüklü teşhis
+                                                  sistemi.</p>
                                         </div>
                                    </div>
                               </div>
@@ -331,10 +375,11 @@
                                    <div class="absolute inset-0 flex justify-center items-start">
                                         <div
                                              class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md text-center max-w-[85%] mt-6">
-                                             <h3 class="text-xl font-bold text-gray-900 mb-2">Taşınabilir Ultrason
-                                                  Cihazi</h3>
-                                             <p class="text-sm text-gray-700">Her zaman ulaşılabilir ve hayat kurtaran
-                                                  teknolojiler.</p>
+                                             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2"
+                                                  data-en="Portable Ultrasound Device">Taşınabilir Ultrason Cihazi</h3>
+                                             <p class="text-sm md:text-base text-gray-700"
+                                                  data-en="Always accessible and life-saving technologies.">Her zaman
+                                                  ulaşılabilir ve hayat kurtaran teknolojiler.</p>
                                         </div>
                                    </div>
                               </div>
@@ -349,117 +394,155 @@
 
      <!--  ILETISIM  -->
      <section id="iletisim" class="flex flex-col mt-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-center text-black mb-8" data-aos="fade-right">İLETİŞİM</h2>
-          <div class="w-full mb-10">
-               <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1123.4244094885312!2d38.80297121470134!3d37.21153218744235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15347bb68e52be29%3A0xd47ec8c14c64acf9!2sParma%20Tasar%C4%B1m!5e0!3m2!1str!2str!4v1753471115496!5m2!1str!2str"
-                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" data-aos="fade-right"></iframe>
-          </div>
-          <!-- formbilgisi -->
-          <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-12 px-2 md:px-0">
-               <!-- Form -->
-               <div class="bg-black rounded-2xl shadow-lg p-8 flex flex-col justify-center min-h-[32rem]" data-aos="fade-right">
-                    <h2 class="text-2xl font-bold mb-8 text-white">İletişime Geçin</h2>
-                    <form class="space-y-5">
-                         <input type="text" placeholder="Adınız ve Soyadınız"
-                              class="w-full rounded-full border border-gray-700 bg-[#181818] px-6 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400 text-gray-100 placeholder-gray-400" />
-                         <input type="text" placeholder="Mesajın Konusu"
-                              class="w-full rounded-full border border-gray-700 bg-[#181818] px-6 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400 text-gray-100 placeholder-gray-400" />
-                         <input type="email" placeholder="E-posta Adresiniz"
-                              class="w-full rounded-full border border-gray-700 bg-[#181818] px-6 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400 text-gray-100 placeholder-gray-400" />
-                         <textarea placeholder="Mesajınızı buraya yazınız..." rows="4"
-                              class="w-full rounded-2xl border border-gray-700 bg-[#181818] px-6 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400 text-gray-100 placeholder-gray-400 resize-none"></textarea>
-                         <button type="submit"
-                              class="mt-2 w-48 rounded-full bg-gray-200 hover:bg-gray-400 text-black font-semibold px-6 py-3 transition-colors">Mesajı
-                              Gönder</button>
-                    </form>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black mb-8" data-aos="fade-right"
+               data-en="Contact Us">İLETİŞİM</h2>
+          <div class="w-full flex justify-center mb-10">
+               <div class="relative w-full lg:w-[50rem] pb-[56.25%] lg:pb-0 lg:h-[30rem] overflow-hidden rounded-2xl shadow-lg"
+                    data-aos="fade-right">
+                    <iframe
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1123.4244094885312!2d38.80297121470134!3d37.21153218744235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15347bb68e52be29%3A0xd47ec8c14c64acf9!2sParma%20Tasar%C4%B1m!5e0!3m2!1str!2str!4v1753471115496!5m2!1str!2str"
+                         class="absolute inset-0 w-full h-full border-0" allowfullscreen="" loading="lazy"
+                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                </div>
-               <!-- İletişim Bilgisi -->
-               <div class="flex flex-col items-center md:items-start gap-8 w-full">
-                    <div class="flex flex-col gap-6 w-full" data-aos="fade-right">
-                         <div class="flex items-start gap-3">
-                              <span class="text-2xl text-black"><i class="fa-solid fa-location-dot"></i></span>
-                              <div class="text-black text-base">
-                                   Yeni Sahra Mah. Yavuz Selim Cad.<br />No:17 K:1 34634<br />Ataşehir İstanbul -
-                                   Türkiye
+          </div>
+
+
+          <!-- formbilgisi -->
+          <section class="w-full max-w-6xl mx-auto px-4 md:px-8 py-12">
+               <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+
+                    <!-- Form -->
+                    <div class="bg-black rounded-2xl shadow-lg p-6 md:p-8 flex flex-col justify-center w-full"
+                         data-aos="fade-right">
+                         <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-white"
+                              data-en="Contact Us">
+                              İletişime Geçin
+                         </h2>
+                         <form class="space-y-4 md:space-y-5">
+                              <input type="text" placeholder="Adınız ve Soyadınız" required
+                                   class="w-full rounded-full border border-gray-700 bg-[#181818] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400 text-gray-100 placeholder-gray-400"
+                                   data-en="Full Name..." />
+                              <input type="text" placeholder="Mesajın Konusu" required
+                                   class="w-full rounded-full border border-gray-700 bg-[#181818] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400 text-gray-100 placeholder-gray-400"
+                                   data-en="Subject..." />
+                              <input type="email" placeholder="E-posta Adresiniz" required
+                                   class="w-full rounded-full border border-gray-700 bg-[#181818] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400 text-gray-100 placeholder-gray-400"
+                                   data-en="Mail.." />
+                              <textarea placeholder="Mesajınızı buraya yazınız..." rows="4" required
+                                   class="w-full rounded-2xl border border-gray-700 bg-[#181818] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400 text-gray-100 placeholder-gray-400 resize-none"
+                                   data-en="Your Message Here..."></textarea>
+                              <button type="submit"
+                                   class="w-full md:w-48 mt-4 md:mt-6 rounded-full bg-gray-200 hover:bg-gray-400 text-black font-semibold px-6 py-3 transition-colors"
+                                   data-en="Submit">
+                                   Mesajı Gönder
+                              </button>
+                         </form>
+                    </div>
+
+                    <!-- İletişim Bilgisi -->
+                    <div class="flex flex-col items-center gap-6 md:gap-8 w-full" data-aos="fade-left">
+                         <div class="space-y-6 w-full lg:ml-12">
+                              <div class="flex items-center gap-3">
+                                   <span class="text-3xl text-black">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                   </span>
+                                   <div class="text-base md:text-lg text-black leading-tight">
+                                        Yeni Sahra Mah. Yavuz Selim Cad.<br />
+                                        No:17 K:1 34634<br />
+                                        Ataşehir İstanbul - Türkiye
+                                   </div>
+                              </div>
+                              <div class="flex items-center gap-3">
+                                   <span class="text-3xl text-black">
+                                        <i class="fa-solid fa-envelope"></i>
+                                   </span>
+                                   <span class="text-base md:text-lg text-black">
+                                        tersnokta0@gmail.com
+                                   </span>
+                              </div>
+                              <div class="flex items-center gap-3">
+                                   <span class="text-3xl text-black">
+                                        <i class="fa-solid fa-fax"></i>
+                                   </span>
+                                   <span class="text-base md:text-lg text-black">
+                                        +90 545 457 81 13
+                                   </span>
+                              </div>
+                              <div class="flex items-center gap-3">
+                                   <span class="text-3xl text-black">
+                                        <i class="fa-solid fa-phone"></i>
+                                   </span>
+                                   <span class="text-base md:text-lg text-black">
+                                        +90 216 470 10 85
+                                   </span>
                               </div>
                          </div>
-                         <div class="flex items-center gap-3">
-                              <span class="text-2xl text-black"><i class="fa-solid fa-envelope"></i></span>
-                              <span class="text-black text-base">tersnokta0@gmail.com</span>
-                         </div>
-                         <div class="flex items-center gap-3">
-                              <span class="text-2xl text-black"><i class="fa-solid fa-fax"></i></span>
-                              <span class="text-black text-base">+90 5454578113</span>
-                         </div>
-                         <div class="flex items-center gap-3">
-                              <span class="text-2xl text-black"><i class="fa-solid fa-phone"></i></span>
-                              <span class="text-black text-base">+90 216 470 10 85</span>
-                         </div>
                     </div>
+
                </div>
-          </div>
+          </section>
+
      </section>
+
      <section>
           <footer class="bg-zinc-900 text-white text-sm">
-  <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-10">
-    <!-- Logo ve Açıklama -->
-    <div>
-      <img src="medikal-asset/logo.jpeg" alt="Cordamed Logo" class="h-12 mb-4">
-      <p class="text-gray-300 leading-relaxed">
-        Dünyanın en gelişmiş endoskopik robotik cerrahi sistemleri olan <strong>DAVINCI</strong> Robotik Cerrahi Sistemlerine adanmış bir Biomedikal Mühendislik şirketiyiz.
-      </p>
-    </div>
+               <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-10">
+                    <!-- Logo ve Açıklama -->
+                    <div>
+                         <img src="medikal-asset/logo.jpeg" alt="BioDs Logo" class="h-12 mb-4">
+                         <p class="text-gray-300 leading-relaxed">
+                              Dünyanın en gelişmiş endoskopik robotik cerrahi sistemleri olan <strong>DAVINCI</strong>
+                              Robotik Cerrahi Sistemlerine adanmış bir Biomedikal Mühendislik şirketiyiz.
+                         </p>
+                    </div>
 
-    <!-- İletişim -->
-    <div>
-      <h3 class="font-bold mb-2">İletişim</h3>
-      <p class="text-gray-400">
-        Yeni Sahra Mah. Yavuz Selim Cad.<br>
-        No:17 K:1 34634<br>
-        Ataşehir İstanbul – Türkiye<br><br>
-        Tel: 0 216 470 10 85<br>
-        Faks: 0 216 470 10 87<br>
-        E-Mail: tersnokta0<br>
-        
-      </p>
-    </div>
+                    <!-- İletişim -->
+                    <div>
+                         <h3 class="font-bold mb-2">İletişim</h3>
+                         <p class="text-gray-400">
+                              Yeni Sahra Mah. Yavuz Selim Cad.<br>
+                              No:17 K:1 34634<br>
+                              Ataşehir İstanbul – Türkiye<br><br>
+                              Tel: 0 216 470 10 85<br>
+                              Faks: 0 216 470 10 87<br>
+                              E-Mail: tersnokta0<br>
 
-    <!-- Sistemler -->
-    <div>
-      <h3 class="font-bold mb-2">Sistemler</h3>
-      <ul class="text-gray-400 space-y-1">
-        <li>FlepoPress</li>
-        <li>FlepoPress Xi</li>
-        <li>FlepoPress Sp</li>
-        <li>IQN Sistemi</li>
-      </ul>
-    </div>
+                         </p>
+                    </div>
 
-    <!-- Hızlı Menü -->
-    <div>
-      <h3 class="font-bold mb-2">Hızlı Menü</h3>
-      <ul class="text-gray-400 space-y-1">
-        <li><a href="#" class="hover:underline">Basın Kiti</a></li>
-        <li><a href="#" class="hover:underline">Bilgi Teknolojileri Hizmeti</a></li>
-        <li><a href="#" class="hover:underline">Bilgi Güvenliği Politikası</a></li>
-        <li><a href="#" class="hover:underline">Kişisel Verilerin Korunması</a></li>
-        <li><a href="#" class="hover:underline">Etik İhlal Bildirimi</a></li>
-      </ul>
-    </div>
-  </div>
+                    <!-- Sistemler -->
+                    <div>
+                         <h3 class="font-bold mb-2">Sistemler</h3>
+                         <ul class="text-gray-400 space-y-1">
+                              <li>FlepoPress</li>
+                              <li>FlepoPress Xi</li>
+                              <li>FlepoPress Sp</li>
+                              <li>IQN Sistemi</li>
+                         </ul>
+                    </div>
 
-  <!-- Alt Kısım -->
-  <div class="bg-black text-center text-gray-400 py-4 text-xs">
-    © 2025 Cordamed. Tüm Hakları Saklıdır.
-  </div>
-</footer>
+                    <!-- Hızlı Menü -->
+                    <div>
+                         <h3 class="font-bold mb-2">Hızlı Menü</h3>
+                         <ul class="text-gray-400 space-y-1">
+                              <li><a href="#" class="hover:underline">Basın Kiti</a></li>
+                              <li><a href="#" class="hover:underline">Bilgi Teknolojileri Hizmeti</a></li>
+                              <li><a href="#" class="hover:underline">Bilgi Güvenliği Politikası</a></li>
+                              <li><a href="#" class="hover:underline">Kişisel Verilerin Korunması</a></li>
+                              <li><a href="#" class="hover:underline">Etik İhlal Bildirimi</a></li>
+                         </ul>
+                    </div>
+               </div>
+
+               <!-- Alt Kısım -->
+               <div class="bg-black text-center text-gray-400 py-4 text-xs">
+                    © 2025 BioDs. Tüm Hakları Saklıdır.
+               </div>
+          </footer>
+
+  
 
      </section>
-
-
-
 
 
      <script src="app.js"></script>
