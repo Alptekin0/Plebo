@@ -48,15 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // Sayfa yüklendiğinde orijinal metinleri ve placeholderları sakla
-  const elements = document.querySelectorAll("[data-en]");
-  for (let i = 0; i < elements.length; i++) {
-    const el = elements[i];
-    if (el.placeholder !== undefined) {
+  document.querySelectorAll("[data-en]").forEach((el) => {
+    if (el.placeholder !== undefined && el.placeholder !== null) {
       el.dataset.originalPlaceholder = el.placeholder;
     } else {
       el.dataset.originalText = el.textContent;
     }
-  }
+  });
 
 });
 
@@ -90,15 +88,16 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
 let currentIndex = 0;
-const totalSlides = slider.children.length;
 
 function updateSlider() {
-  const slideWidth = slider.clientWidth;
+  const card = slider.children[0];
+  if (!card) return;
+  const slideWidth = card.offsetWidth + 24; // 24 = gap-6
   slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
 nextBtn.addEventListener('click', () => {
-  if (currentIndex < totalSlides - 1) {
+  if (currentIndex < slider.children.length - 1) {
     currentIndex++;
     updateSlider();
   }
@@ -114,36 +113,63 @@ prevBtn.addEventListener('click', () => {
 window.addEventListener('resize', updateSlider);
 
 
+
+
+
+/* DİL SEÇİM */
 let currentLang = "tr";
 
-document.getElementById("langToggle").addEventListener("click", () => {
-  const btn = document.getElementById("langToggle");
+// Tüm lang butonlarını yakala
+document.querySelectorAll(".langMenuButton").forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    // Aynı butonun içindeki dropdown'u bul
+    const dropdown = btn.parentElement.querySelector(".langMenu");
+    dropdown.classList.toggle("hidden");
 
-  if (currentLang === "tr") {
-    currentLang = "en";
-    btn.textContent = "TR";
-  } else {
-    currentLang = "tr";
-    btn.textContent = "EN";
-  }
+    // Diğer açık menüleri kapat
+    document.querySelectorAll(".langMenu").forEach((menu, i) => {
+      if (i !== index) menu.classList.add("hidden");
+    });
+  });
+});
 
-  const elements = document.querySelectorAll("[data-en]");
-  for (let i = 0; i < elements.length; i++) {
-    const el = elements[i];
-    if (el.placeholder !== undefined) {
-      // Eğer elementin placeholder attribute'u varsa, onu güncelle
-      if (currentLang === "en") {
-        el.placeholder = el.getAttribute("data-en");
-      } else {
-        el.placeholder = el.dataset.originalPlaceholder;
-      }
-    } else {
-      // Yoksa normal textContent güncelle
-      if (currentLang === "en") {
-        el.textContent = el.getAttribute("data-en");
-      } else {
-        el.textContent = el.dataset.originalText;
-      }
-    }
+// Her dropdown içindeki dil seçeneğini işle
+document.querySelectorAll(".langMenu").forEach((menu) => {
+  menu.querySelectorAll("button").forEach((langBtn) => {
+    langBtn.addEventListener("click", () => {
+      const selectedLang = langBtn.dataset.lang;
+      currentLang = selectedLang;
+
+      // Menü kapat
+      menu.classList.add("hidden");
+
+      // Diğer dil butonları güncellenebilirse
+      document.querySelectorAll(".langToggle").forEach((b) => {
+        b.textContent = currentLang === "tr" ? "EN" : "TR";
+      });
+
+      // Sayfa içeriğini güncelle
+      document.querySelectorAll("[data-en]").forEach((el) => {
+        if (el.placeholder !== undefined && el.placeholder !== null) {
+          el.placeholder =
+            currentLang === "en"
+              ? el.getAttribute("data-en")
+              : el.dataset.originalPlaceholder;
+        } else {
+          el.textContent =
+            currentLang === "en"
+              ? el.getAttribute("data-en")
+              : el.dataset.originalText;
+        }
+      });
+    });
+  });
+});
+
+// Sayfa dışında bir yere tıklanırsa dropdown'u kapat
+document.addEventListener("click", (e) => {
+  const isDropdown = e.target.closest(".langMenuButton") || e.target.closest(".langMenu");
+  if (!isDropdown) {
+    document.querySelectorAll(".langMenu").forEach((menu) => menu.classList.add("hidden"));
   }
 });
