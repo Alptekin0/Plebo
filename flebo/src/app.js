@@ -173,3 +173,20 @@ document.addEventListener("click", (e) => {
     document.querySelectorAll(".langMenu").forEach((menu) => menu.classList.add("hidden"));
   }
 });
+
+
+
+
+// mobil için animasyon hızı ayarla
+
+function setMarqueeSpeed() {
+  const marquee = document.getElementById('brandMarquee');
+  const isMobile = window.innerWidth < 768;
+
+  if (marquee) {
+    // Reset animasyonu
+    marquee.style.animation = 'none';
+    void marquee.offsetWidth; // Force reflow
+    marquee.style.animation = `marquee ${isMobile ? '10s' : '20s'} linear infinite`;
+  }
+}
