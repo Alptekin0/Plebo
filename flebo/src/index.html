@@ -15,176 +15,70 @@
 
 
      <!--  HEADER  -->
-     <header id="header"
-          class="fixed top-0 left-0 w-full z-50 bg-white backdrop-blur-md  transition-transform duration-700">
-          <nav class="flex items-center justify-between px-8 h-20 md:h-24 w-full">
-               <a href="#ana-sayfa">
-                    <img src="medikal-asset/logo.jpeg" alt="BioDs Logo"
-                         class="h-18 md:h-20 lg:h-[90px] w-18 md:w-20 lg:w-[90px] rounded-full border-4 border-white mx-auto object-cover" />
-               </a>
+        <header class="">
+      <nav class="flex items-center justify-between px-8 h-20 w-full">
+        <div class="text-red-800 font-bold">YEMİN</div>
+        <!--DESKTOP MENU-->
+        <div class="hidden">
+          <a href="#ana-sayfa">Ana Sayfa</a>
+          <a href="#hakkimizda">Hakkımızda</a>
+          <a href="#urunler">Ürünler</a>
+          <a href="#iletisim">İletişim</a>
+        </div>
 
+        
 
+        <div>
+          <a href="" class="text-2xl"
+            ><i><i class="fa-solid fa-bars"></i></i
+          ></a>
+        </div>
+      </nav>
+    </header>
 
-               <!--DESKTOP MENU-->
-               <div class="hidden md:flex items-center justify-center mr-28 gap-8 text-xl font-semibold">
-                    <a href="#ana-sayfa" data-en="Home" class="hover:text-blue-600 transition">Ana Sayfa</a>
-                    <a href="#hakkimizda" data-en="About" class="hover:text-blue-600 transition">Hakkımızda</a>
-                    <a href="#urunler" data-en="Products" class="hover:text-blue-600 transition">Ürünler</a>
-                    <a href="#iletisim" data-en="Contact" class="hover:text-blue-600 transition">İletişim</a>
+    <!--ANA SAYFA-->
+    <section id="ana-sayfa" class="relative w-full h-[30rem]">
+      
+      <img
+        src="medikal-asset/klinik.jpg"
+        alt="Klinik Görseli"
+        class="absolute inset-0 w-full h-full object-cover z-0"
+      />
 
-                    <!-- DİL SEÇİCİ DROPDOWN -->
-                    <div class="relative inline-block text-left">
-                         <button class="langMenuButton text-3xl">
-                              <i class="fa-solid fa-globe"></i>
-                         </button>
+      
+      <div class="absolute inset-0 bg-black/40 z-10"></div>
 
-                         <div
-                              class="langMenu hidden absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-                              <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-lang="tr">🇹🇷
-                                   Türkçe</button>
-                              <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-lang="en">🇬🇧
-                                   English</button>
-                         </div>
-                    </div>
+      <div
+        class="relative z-20 flex flex-col items-start justify-end h-full text-white text-center px-5"
+      >
+        <h1 class="text-3xl font-bold">MARKA</h1>
+        <p class="mt-4 text-lg w-2/3 mb-10">
+          20 yıllık bir tecrübe ile modern bir klinik deneyimine adım atın
+        </p>
+      </div>
+    </section>
 
-
-               </div>
-
-
-
-               <!--MOBILE MENU BUTTON-->
-               <div class="fixed right-8 top-3 md:hidden flex items-center space-x-10 p-2 rounded z-50">
-
-
-                    <!-- DİL SEÇİCİ DROPDOWN -->
-                    <div class="relative inline-block text-left">
-                         <button class="langMenuButton text-3xl">
-                              <i class="fa-solid fa-globe"></i>
-                         </button>
-
-                         <div
-                              class="langMenu hidden absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-                              <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-lang="tr">🇹🇷
-                                   Türkçe</button>
-                              <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" data-lang="en">🇬🇧
-                                   English</button>
-                         </div>
-                    </div>
-
-
-                    <!-- Hamburger Menü Butonu -->
-                    <button class="mobileMenu text-3xl p-2">
-                         <i class="fa-solid fa-bars"></i>
-                    </button>
-               </div>
-
-
-          </nav>
-     </header>
-
-     <!-- MOBİL MENU İCERİK -->
-     <div class="mobileMenuContent">
-          <div
-               class="mobileMenuPanel hidden fixed top-0 right-0 w-[45vw] h-screen bg-secondary overflow-y-auto z-[100] p-6">
-
-               <div class="space-y-8 p-6">
-
-                    <button class="x-markButton absolute top-6 right-6 text-2xl font-bold text-white">
-                         <i class="fa-solid fa-xmark"></i>
-                    </button>
-
-                    <div class="pages flex flex-col items-center justify-center mt-11">
-                         <a href="#ana-sayfa" class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white"
-                              data-en="Home">Ana Sayfa</a>
-                         <a href="#hakkimizda" class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white"
-                              data-en="About">Hakkımızda</a>
-                         <a href="#urunler" class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white"
-                              data-en="Product">Ürünler</a>
-                         <a href="#iletisim" class="mt-6 text-xl font-bold whitespace-nowrap block py-3 text-white"
-                              data-en="Contact">İletişim</a>
-                    </div>
-
-               </div>
-          </div>
-     </div>
-
-
-     <!--ANA SAYFA-->
-     <section id="ana-sayfa" class="relative w-full h-[40rem]">
-
-          <div id="scrollIndicator"
-               class="hidden absolute bottom-15 left-[87%] -translate-x-1/2 w-[47px] md:w-[57px] h-[80px] md:h-[95px] border-2 border-white rounded-[25px] md:rounded-[30px] z-50">
-               <span
-                    class="absolute top-[10px] left-1/2 +translate-x-1/2 w-[30px] md:w-[40px] h-[30px] md:h-[37px] bg-black rounded-full animate-scrollDown">
-               </span>
-          </div>
-
-
-
-          <!-- Arka plan resmi -->
-          <img src="medikal-asset/klinik2.jpg" alt="Klinik Görseli"
-               class="absolute inset-0 w-full h-full object-cover lg:object-center z-0" />
-
-
-          <div class="absolute inset-0 bg-black/40 z-10"></div>
-
-          <!-- Ana sayfa yazısı -->
-          <div class="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-5 mt-10">
-               <h6 class="text-xl md:text-2xl font-bold" data-aos="fade-left" data-en="BioDs Medical Services">BioDs
-                    Sağlık
-                    Hizmetleri </h6>
-               <p class="mt-4 text-l md:text-xl lg:text-[22px] font-semibold w-2/3 mx-auto" data-aos="fade-left"
-                    data-en="Step into a modern clinical experience with 20 years of expertise.">
-                    20 yıllık bir tecrübe ile modern bir klinik deneyimine adım atın
-               </p>
-
-
-               <div class="mt-6" data-aos="fade-right">
-                    <a href="#hakkimizda"
-                         class="group relative inline-flex items-center px-5 py-3 lg:py-4 bg-white text-black rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-xl hover:bg-gray-100">
-
-                         <span class="mr-2 flex items-center gap-2">
-                              <span class="translate-text md:text-xl" data-en="Discover Our Services">Hizmetlerimizi
-                                   Keşfedin</span>
-                              <i class="fa-solid fa-arrow-right"></i>
-                         </span>
-
-                    </a>
-               </div>
-
-          </div>
-     </section>
+    <section id="hakkimizda" class="flex flex-col mt-16">
+      
+      <div class="bg-gray-800 flex items-center justify-center">
+        <div class="relative w-full">
+          <div class="absolute inset-0 flex flex-col  justify-center text-white bg-black/25 px-4">
+  <p class="text-2xl md:text-3xl font-bold mb-2 text-center">HAKKIMIZDA</p>
+  <p class="text-base md:text-lg  text-left w-full mt-8 px-16">
+    Minimal invaziv cerrahi için insan elinden ilham alan ve daha fazla hareket kabiliyetine sahip enstrümanlar hekimin ulaşmak istediği tüm noktalara ulaşmasını sağlıyor ve el titremelerini ortadan kaldırıyor.
+  </p>
+</div>
 
 
 
 
-     <!--  HAKKIMIZDA  -->
-     <section id="hakkimizda" class="flex flex-col">
-
-
-          <!-- GEÇİŞ DİVİ -->
-          <div
-               class="w-full h-1 bg-gradient-to-t from-gray-300 to-gray-200 flex items-center justify-center text-white font-bold">
-          </div>
-
-
-
-          <div class="bg-gray-800 flex items-center justify-center">
-               <div class="relative w-full">
-
-                    <img src="medikal-asset/team2.png" alt="Hakkımızda"
-                         class="w-full h-[50vh] md:h-[70vh] object-cover" />
-
-
-                    <!-- Karartma katmanı -->
-                    <div class="absolute inset-0 bg-black/40 z-10"></div>
-
-                    <div class="absolute inset-0 flex flex-col justify-center text-white px-4 z-20">
-                         <p class="text-2xl md:text-3xl lg:text-5xl font-bold mb-2 text-center" data-aos="fade-right"
-                              data-en="About Us">HAKKIMIZDA</p>
-                    </div>
-               </div>
-          </div>
+          <img
+            src="medikal-asset/team2.png"
+            alt="Hakkımızda"
+            class="w-full h-48 md:h-60 lg:h-96 object-cover"
+          />
+        </div>
+      </div>
 
 
 
